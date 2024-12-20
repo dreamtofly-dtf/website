@@ -1,1 +1,31 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title> ar card </title>
+  <!-- MindAR Library -->
+  <script src="https://aframe.io/releases/1.5.0/aframe.min.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/mind-ar@1.2.5/dist/mindar-image-aframe.prod.js"></script>
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+</head>
+<body style="margin: 0; overflow: hidden;">
+  <!-- MindAR Section -->
+  <a-scene mindar-image="imageTargetSrc: https://webar.pavan.serv00.net/mycard2.mind; filterMinCF:0.1; filterBeta: 10; warmupTolerance: 1; missTolerance: 1" color-space="sRGB" renderer="colorManagement: true, physicallyCorrectLights" vr-mode-ui="enabled: false" device-orientation-permission-ui="enabled: false">
+    <a-assets>
+      <!-- Images -->
+      <img id="soonImage" src="soon.png" />
 
+      <!-- GLTF Model -->
+      <a-asset-item id="gltfModel" src="https://webar.pavan.serv00.net/scene (1).gltf"></a-asset-item>
+    </a-assets>
+
+    <!-- Camera for MindAR -->
+    <a-camera position="0 0 0" look-controls="enabled: false"></a-camera>
+
+    <!-- MindAR Image Target -->
+    <a-entity mindar-image-target="targetIndex: 0">
+      <!-- GLTF Model Entity -->
+      <a-gltf-model src="#gltfModel" position="0 0 0" scale="0.5 0.5 0.5" rotation="90 0 0"></a-gltf-model>
+    </a-entity>
+  </a-scene>
+</body>
+</html>
